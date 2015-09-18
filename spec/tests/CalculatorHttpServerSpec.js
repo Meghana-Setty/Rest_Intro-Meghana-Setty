@@ -13,7 +13,6 @@ describe("Calculator Http Service", function(){
 			var url = sum_url + "?op1=3&op2=5";
 		    
 		    request.get(url, function(error, response, body){
-
 				expect(response.statusCode).toBe(200);
 				expect(parseInt(body)).toBe(8);
 

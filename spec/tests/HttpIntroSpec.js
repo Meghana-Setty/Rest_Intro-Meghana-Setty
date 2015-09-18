@@ -16,11 +16,12 @@ describe("HttpIntro Test Suite", function(){
 
 			console.log("in callback" + response);
 
-			console.log(response.statusCode);
-			expect(response.statusCode).toBe(200);
-			expect(response.statusMessage).toBe('OK');
-			expect(response.headers["content-type"]).toBe("text/html");
-
+			//console.log(response.statusMessage);
+			//console.log(response.headers["content-type"]);
+			expect(response.statusCode).toBe(404);
+			expect(response.statusMessage).toBe('Not Found');
+			expect(response.headers["content-type"]).toBe("text/html; charset=UTF-8");
+		//	console.log(response.statusCode+"    "+response.statusMessage+"    "+response.headers["content-type"]);
 			done();
     	});
 
@@ -37,10 +38,10 @@ describe("HttpIntro Test Suite", function(){
 	    		 function(error, response, body){
 
 				// console.log(response);
-				expect(response.statusCode).toBe(404);
-				expect(response.statusMessage).toBe('Not Found');
-				expect(response.headers["content-type"]).toBe("text/html; charset=UTF-8");
-
+				expect(response.statusCode).toBe(400);
+				expect(response.statusMessage).toBe('Bad Request');
+				expect(response.headers["content-type"]).toBe("application/json; charset=utf-8");
+//				console.log(response.statusCode+"    "+response.statusMessage+"    "+response.headers["content-type"]);
 				done();
 	    });
 	});
@@ -56,10 +57,11 @@ describe("HttpIntro Test Suite", function(){
 	    		 function(error, response, body){
 
 				//console.log(response);
-				expect(response.statusCode).toBe(404);
-				expect(response.statusMessage).toBe('Not Found');
-				expect(response.headers["content-type"]).toBe("text/html; charset=UTF-8");
-
+				expect(response.statusCode).toBe(200);
+				expect(response.statusMessage).toBe('OK');
+				expect(response.headers["content-type"]).toBe(" application/json; charset=utf-8");
+//console.log(response.statusCode+"    "+response.statusMessage+"    "+response.headers["content-type"]);
+				
 				done();
 	    });
 	 });
@@ -77,8 +79,8 @@ describe("HttpIntro Test Suite", function(){
 	    		 function(error, response, body){
 
 				//console.log(response);
-				//expect(body.sys.country).toBe("IN");
-
+				expect(body.sys.country).toBe("IN");
+				console.log(body.sys.country);
 				done();
 		    });
 	});
@@ -92,9 +94,10 @@ describe("HttpIntro Test Suite", function(){
 	    		  json: false}, 
 	    		 function(error, response, body){
 
-				console.log("body ", body);
+				//console.log("body ", body);
 				expect(body.current.city.country).toBe("IN");
-
+				console.log("country : "+body.sys.country);
+				
 				done();
 		    });
 	});

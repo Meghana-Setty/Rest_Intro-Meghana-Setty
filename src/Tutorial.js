@@ -26,7 +26,6 @@ function handleRequest(request, response){
 	request.on('end', function() {
 
 		var str = "Received " + request.method + " request for " + request.url + " body: " + bodyStr;
-		console.log(str);
 
 		var responseBody = new Object();
 		responseBody.method = request.method;

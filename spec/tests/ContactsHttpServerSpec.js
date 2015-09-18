@@ -16,7 +16,7 @@ describe("Contacts Test Suite", function(){
 							json: true
 						},
 		    		    function(error, response, body){
-
+		    		    	console.log(response.statusCode);
 							expect(response.statusCode).toBe(404);
 							done();
 					    });
@@ -28,8 +28,8 @@ describe("Contacts Test Suite", function(){
 							json: true
 						},
 		    		    function(error, response, body){
-
-							expect(response.statusCode).toBe(404);
+		    		    	console.log(response.statusCode);
+							expect(response.statusCode).toBe(400);
 							done();
 					    });
 		});
@@ -47,9 +47,9 @@ describe("Contacts Test Suite", function(){
 		    			  json: true
 		    			}, 
 		    		    function(error, response, body){
-		    		    	console.log(body);
+		    		    	console.log("came here "+body);
 							expect(response.statusCode).toBe(200);
-							console.log(body);
+							console.log(response.statusCode+" here also"+body);
 							idCreated = body;
 							done();
 					    });
