@@ -24,7 +24,7 @@ Vhttp://mission-rnd.github.io/nodejs-rest.htm
 p12
 sVproject_status
 p13
-I0
+I1
 sVproject_gitrepo
 p14
 Vhttps://github.com/mission-rnd/mrnd-nodejs-http

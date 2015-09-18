@@ -3,7 +3,7 @@ describe("Calculator Http Service", function(){
 
 	//var request = require('request');
 	var request = require('C:/Program Files/nodejs/node_modules/npm/node_modules/request')
-	var base_url = "http://localhost:3000";
+	var base_url = "http://localhost:3001";
 	var sum_url = base_url + "/calculator/sum";
 
 	describe("get sum of 2 numbers", function(){
